@@ -29,6 +29,18 @@ fun Navigation() {
             rememberSavedStateNavEntryDecorator(),
             rememberViewModelStoreNavEntryDecorator()
         ),
+        transitionSpec = {
+            ContentTransform(
+                slideInHorizontally(initialOffsetX = { it }),
+                slideOutHorizontally()
+            )
+        },
+        popTransitionSpec = {
+            ContentTransform(
+                slideInHorizontally(),
+                slideOutHorizontally(targetOffsetX = { it })
+            )
+        },
         entryProvider = entryProvider {
             entry<Home> {
                 Home(
