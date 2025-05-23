@@ -23,13 +23,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.navigation3.runtime.NavKey
 import io.devexpert.nav3samples.data.Product
 import io.devexpert.nav3samples.data.products
 import kotlinx.serialization.Serializable
 
 
 @Serializable
-data object Home
+data object Home: NavKey
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
