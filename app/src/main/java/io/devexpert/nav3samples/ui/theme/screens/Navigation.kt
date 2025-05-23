@@ -41,15 +41,20 @@ fun Navigation() {
                 slideOutHorizontally(targetOffsetX = { it })
             )
         },
+        sceneStrategy = TwoPaneSceneStrategy(),
         entryProvider = entryProvider {
-            entry<Home> {
+            entry<Home>(
+                metadata = TwoPaneScene.twoPane()
+            ) {
                 Home(
                     onProductClick = { productId ->
                         backStack.add(ProductDetail(productId))
                     }
                 )
             }
-            entry<ProductDetail> { key ->
+            entry<ProductDetail>(
+                metadata = TwoPaneScene.twoPane()
+            ) { key ->
                 ProductDetailScreen(
                     viewModel = viewModel { ProductDetailViewModel(key.productId) },
                     onBackClick = {
