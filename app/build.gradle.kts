@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace = "io.devexpert.nav3samples"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "io.devexpert.nav3samples"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -52,6 +52,8 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation3.runtime)
     implementation(libs.androidx.navigation3.ui)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.androidx.lifecycle.viewmodel.navigation3)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
